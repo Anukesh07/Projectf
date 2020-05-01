@@ -1,4 +1,19 @@
-
+<?php
+session_start();
+$con= mysqli_connect('localhost','root','') or die(mysql_error()) ;
+mysqli_select_db($con,'demo1') or die("cannot select DB");
+if(!$con)
+{
+	echo'connection error:'.mysqli_connect_error() ;
+}
+$email = $_SESSION['sess_user'];
+$sql = "SELECT * FROM ans WHERE email='".$email."'" ;
+$result = mysqli_query($con, $sql) ;
+$queses = mysqli_fetch_all($result, MYSQLI_ASSOC) ;
+mysqli_free_result($result) ;
+$query=mysqli_query($con,"SELECT * FROM userprofile WHERE email='".$email."'");
+$numrows=mysqli_num_rows($query);
+?>
 
 <html>
 <head>
