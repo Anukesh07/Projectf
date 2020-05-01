@@ -1,4 +1,26 @@
+<?php
+$con= mysqli_connect('localhost','root','') or die(mysql_error()) ;
+mysqli_select_db($con,'demo1') or die("cannot select DB");
+if(!$con)
+{
+	echo'connection error:'.mysqli_connect_error() ;
+}
+session_start();
+$emai = $_SESSION['sess_user'];
+$sql = "SELECT * FROM ques WHERE email='".$emai."'" ;
+$result = mysqli_query($con, $sql) ;
+$queses = mysqli_fetch_all($result, MYSQLI_ASSOC) ;
+mysqli_free_result($result) ;
+?>
+<?php
+    if(isset($_POST['submit']))
+    {
+       session_start() ;
+       $_SESSION['submit']=$_POST['submit'] ;
+       header('Location: answer.php') ;
 
+    }
+?>
 <html>
 <head>
 <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
