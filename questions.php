@@ -321,7 +321,7 @@ function showTeacher(str) {
    <a  href="Profile.php"><i class="fa fa-user"></i>&nbsp Profile</a>
    <a class="active" href="questions.php"><i class="fa fa-question"></i>ASK</a>
    <a href="allques.php">Questions &nbsp<i class="fa fa-question"></i></a>
-   <a  href="about.html"><i class="fa fa-address-book"></i>&nbsp About Us</a>
+   <a  href="about.php"><i class="fa fa-address-book"></i>&nbsp About Us</a>
    <div class='rt'>	<a href="logout.php" class="button">Logout</a>
 </div>
     </div>
